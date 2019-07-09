@@ -1,0 +1,17 @@
+{
+  "name": "dev-parallax",
+  "main": "dev-parallax.js",
+  "homepage": "https://github.com/samushi/dev-parallax",
+  "authors": [
+    "Sami Maxhuni <samimaxhuni510@gmail.com>"
+  ],
+  "description": "Parallax for background content",
+  "keywords": [
+    "Parallax",
+    "Background",
+    "DevSolution",
+    "Parallax"
+  ],
+  "license": "MIT",
+  "private": true
+}

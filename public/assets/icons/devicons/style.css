@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'dev-fabulous-icons';
+    src:    url('fonts/dev-fabulous-icons.eot?1iybf8');
+    src:    url('fonts/dev-fabulous-icons.eot?1iybf8#iefix') format('embedded-opentype'),
+        url('fonts/dev-fabulous-icons.ttf?1iybf8') format('truetype'),
+        url('fonts/dev-fabulous-icons.woff?1iybf8') format('woff'),
+        url('fonts/dev-fabulous-icons.svg?1iybf8#dev-fabulous-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="devex-"], [class*=" devex-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'dev-fabulous-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.devex-clock:before {
+    content: "\e900";
+}
+.devex-cloth:before {
+    content: "\e901";
+}
+.devex-earth:before {
+    content: "\e902";
+}
+

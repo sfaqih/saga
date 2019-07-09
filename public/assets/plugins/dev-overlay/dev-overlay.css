@@ -1,0 +1,131 @@
+/* overlay style */
+body > .overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(26,188,156,0.9);
+	/*background: rgba(0,0,0,0.8);*/
+	z-index: 22;
+}
+
+body > .overlay #mk-fullscreen-search-wrapper{
+	  display: block;
+	  position: absolute;
+	  top: 50%;
+	  left: 25%;
+	  width: 50%;
+	  margin-top: -65px;
+}
+
+body > .overlay #mk-fullscreen-search-wrapper p{
+	  font-size: 24px;
+	  margin-bottom: 40px;
+	  color: #fff;
+	  text-align: center;
+	  letter-spacing: 2px;
+	  text-transform: uppercase;
+}
+
+body > .overlay #mk-fullscreen-search-wrapper #mk-fullscreen-searchform{
+	position: relative;
+}
+
+body > .overlay #mk-fullscreen-search-wrapper #mk-fullscreen-searchform #mk-fullscreen-search-input{
+  width: 100%;
+  background-color: transparent;
+  -webkit-box-shadow: 0 3px 0 0 rgba(255,255,255,.7);
+  -moz-box-shadow: 0 3px 0 0 rgba(255,255,255,.7);
+  box-shadow: 0 3px 0 0 rgba(255,255,255,.7);
+  border: 0;
+  text-align: center;
+  font-size: 30px;
+  padding: 15px 45px 0px 15px;
+  color: #fff;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+body > .overlay #mk-fullscreen-search-wrapper i input[type="submit"]{
+	position: absolute;
+	width: 100px;
+	height: 100%;
+	background-color: transparent;
+	border: 0;
+	right: 0;
+	top: 0;
+}
+
+body > .overlay #mk-fullscreen-search-wrapper #mk-fullscreen-searchform #mk-fullscreen-search-input:focus{
+	outline: 0;
+}
+
+body > .overlay #mk-fullscreen-search-wrapper #mk-fullscreen-searchform i{
+	  font-size: 30px;
+	  position: absolute;
+	  right: 10px;
+	  top: 20px;
+	  color: rgba(255,255,255,.5);
+	  -webkit-transition: all .2s ease-out;
+	  -moz-transition: all .2s ease-out;
+	  -ms-transition: all .2s ease-out;
+	  -o-transition: all .2s ease-out;
+	  transition: all .2s ease-out;
+}
+
+/* overlay closing cross */
+/*body > .overlay .overlay-close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: url(../img/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+	z-index: 100;
+}*/
+
+body > .site-container {
+	background: #fff;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+body > .site-container.overlay-open {
+	-webkit-transform: scale(0.9);
+	transform: scale(0.9);
+}
+
+body > .overlay-contentscale {
+	visibility: hidden;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+	transition: transform 0.5s, visibility 0s 0.5s;
+}
+
+body > .overlay-contentscale.open {
+	visibility: visible;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+@media screen and (max-height: 30.5em) {
+	/*body > .overlay nav {
+		height: 70%;
+		font-size: 34px;
+	}
+	body > .overlay ul li {
+		min-height: 34px;
+	}*/
+}

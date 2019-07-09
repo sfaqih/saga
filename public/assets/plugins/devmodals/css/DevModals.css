@@ -1,0 +1,490 @@
+/* Main wrapper */
+.devModals * {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100%;
+	vertical-align: baseline;
+	line-height: normal;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.devModals {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+}
+.isActive {
+	visibility: visible;
+	opacity: 1;
+	z-index: 99999;
+}
+.devModals.isActive,
+.isActive .overlay {
+	-webkit-transition-delay: 0s;
+	-moz-transition-delay: 0s;
+	-ms-transition-delay: 0s;
+	transition-delay: 0s;
+}
+.devModals,
+.devModals.isActive .dev-window {
+	-webkit-transition-delay: 0.2s;
+	-moz-transition-delay: 0.2s;
+	-ms-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+}
+.devModals.isActive .dev-window {
+	-webkit-transform: rotate(0deg) scale(1);
+	-moz-transform: rotate(0deg) scale(1);
+	-ms-transform: rotate(0deg) scale(1);
+	transform: rotate(0deg) scale(1);
+}
+.devModals.isActive .dev-overlay,
+.devModals.isActive .dev-window {
+	opacity: 1;
+}
+
+/* Overlay defaults */
+.dev-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	display: block;
+	opacity: 0;
+	z-index: 1;
+	background: rgba(0,0,0,0.8);
+}
+
+/* Window defaults */
+.dev-window {
+	display: inline-block;
+	width: 500px;
+	height: 300px;
+	padding: 40px;
+	position: absolute;
+	margin: auto;
+	background: #fff;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	z-index: 2;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	opacity: 0;
+	-webkit-transition-property: rotate, transform, opacity, scale, perspective;
+	-moz-transition-property: rotate, transform, opacity, scale, perspective;
+	-ms-transition-property: rotate, transform, opacity, scale, perspective;
+	transition-property: rotate, transform, opacity, scale, perspective;
+}
+
+/* ========================
+   Background defaults
+   ======================== */
+
+/* Blur */
+.blurred {
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+}
+/* Scale */
+.scaled {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+}
+
+/* ========================
+   Modal window positions
+   ======================== */
+
+/* Center */
+.dev-window.center {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/* Top */
+.dev-window.topLeft {
+	top: 0;
+	left: 0;
+}
+.dev-window.topCenter {
+	top: 0;
+	left: 0;
+	right: 0;
+}
+.dev-window.topRight {
+	top: 0;
+	right: 0;
+}
+
+/* Bottom */
+.dev-window.bottomLeft {
+	bottom: 0;
+	left: 0;
+}
+.dev-window.bottomCenter {
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.dev-window.bottomRight {
+	bottom: 0;
+	right: 0;
+}
+
+/* On side */
+.dev-window.right {
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.dev-window.left {
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+
+/*
+	Modal Base
+ */
+
+/* Center */
+.devModals.center{
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/* Top */
+.devModals.topLeft{
+	top: 0;
+	left: 0;
+	right: auto;
+	bottom: auto;
+}
+.devModals.topCenter{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+}
+.devModals.topRight{
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: auto;
+}
+
+/* Bottom */
+.devModals.bottomLeft{
+	bottom: 0;
+	left: 0;
+	top: auto;
+	right: auto;
+}
+.devModals.bottomCenter{
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: auto;
+}
+.devModals.bottomRight{
+	bottom: 0;
+	right: 0;
+	top: auto;
+	left: auto;
+}
+
+/* On side */
+.devModals.right{
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: auto;
+}
+.devModals.left{
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: auto;
+}
+
+
+/* ========================
+   Modal window transitions
+   ======================== */
+
+/* Fade */
+.dev-window.fade {
+	opacity: 0;
+}
+
+/* Zoom */
+.dev-window.zoomIn {
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	transform: scale(0.8);
+}
+.dev-window.zoomOut {
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+/* Slide */
+.dev-window.slideTop {
+	-webkit-transform: translateY(-25%);
+	-moz-transform: translateY(-25%);
+	-ms-transform: translateY(-25%);
+	transform: translateY(-25%);
+}
+.dev-window.slideBottom {
+	-webkit-transform: translateY(25%);
+	-moz-transform: translateY(25%);
+	-ms-transform: translateY(25%);
+	transform: translateY(25%);
+}
+.dev-window.slideLeft {
+	-webkit-transform: translateX(-25%);
+	-moz-transform: translateX(-25%);
+	-ms-transform: translateX(-25%);
+	transform: translateX(-25%);
+}
+.dev-window.slideRight {
+	-webkit-transform: translateX(25%);
+	-moz-transform: translateX(25%);
+	-ms-transform: translateX(25%);
+	transform: translateX(25%);
+}
+
+/* Rotate */
+.dev-window.rotateIn {
+	-webkit-transform: rotate(720deg) scale(0);
+	-moz-transform: rotate(720deg) scale(0);
+	-ms-transform: rotate(720deg) scale(0);
+	transform: rotate(720deg) scale(0);
+}
+.dev-window.rotateOut {
+	-webkit-transform: rotate(720deg) scale(1.5);
+	-moz-transform: rotate(720deg) scale(1.5);
+	-ms-transform: rotate(720deg) scale(1.5);
+	transform: rotate(720deg) scale(1.5);
+}
+
+/* Flip */
+.dev-window.flipHorizontal {
+	-webkit-transform: rotateY(-90deg);
+	-moz-transform: rotateY(-90deg);
+	-ms-transform: rotateY(-90deg);
+	transform: rotateY(-90deg);
+}
+.dev-window.flipVertical {
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	-ms-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+}
+
+/* Perpective */
+.dev-window.perspectiveTop {
+	-webkit-transform: perspective(300px) rotateX(-90deg);
+	-moz-transform: perspective(300px) rotateX(-90deg);
+	-ms-transform: perspective(300px) rotateX(-90deg);
+	transform: perspective(300px) rotateX(-90deg);
+	-webkit-transform-origin: top center;
+	-moz-transform-origin: top center;
+	-ms-transform-origin: top center;
+	transform-origin: top center;
+}
+.dev-window.perspectiveBottom {
+	-webkit-transform: perspective(300px) rotateX(90deg);
+	-moz-transform: perspective(300px) rotateX(90deg);
+	-ms-transform: perspective(300px) rotateX(90deg);
+	transform: perspective(300px) rotateX(90deg);
+	-webkit-transform-origin: bottom center;
+	-moz-transform-origin: bottom center;
+	-ms-transform-origin: bottom center;
+	transform-origin: bottom center;
+}
+.dev-window.perspectiveLeft {
+	-webkit-transform: perspective(200px) rotateY(90deg);
+	-moz-transform: perspective(200px) rotateY(90deg);
+	-ms-transform: perspective(200px) rotateY(90deg);
+	transform: perspective(200px) rotateY(90deg);
+	-webkit-transform-origin: center left;
+	-moz-transform-origin: center left;
+	-ms-transform-origin: center left;
+	transform-origin: center left;
+}
+.dev-window.perspectiveRight {
+	-webkit-transform: perspective(200px) rotateY(-90deg);
+	-moz-transform: perspective(200px) rotateY(-90deg);
+	-ms-transform: perspective(200px) rotateY(-90deg);
+	transform: perspective(200px) rotateY(-90deg);
+	-webkit-transform-origin: center right;
+	-moz-transform-origin: center right;
+	-ms-transform-origin: center right;
+	transform-origin: center right;
+}
+
+/* ========================
+   Transition timing defaults
+   ======================== */
+
+.devModals .linear {
+	-webkit-transition-timing-function: linear;
+	-moz-transition-timing-function: linear;
+	-ms-transition-timing-function: linear;
+	transition-timing-function: linear;
+}
+.devModals .ease {
+	-webkit-transition-timing-function: ease;
+	-moz-transition-timing-function: ease;
+	-ms-transition-timing-function: ease;
+	transition-timing-function: ease;
+}
+.devModals .ease-in {
+	-webkit-transition-timing-function: ease-in;
+	-moz-transition-timing-function: ease-in;
+	-ms-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+}
+.devModals .ease-out {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.devModals .ease-in-out {
+	-webkit-transition-timing-function: ease-in-out;
+	-moz-transition-timing-function: ease-in-out;
+	-ms-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+}
+
+/* ========================
+   Close buttons
+   ======================== */
+
+/* Basics */
+.devClosModal,
+.openModal {
+	cursor: pointer;
+}
+.devModals .close {
+	position: absolute;
+	top: -20px;
+	right: 0;
+	z-index: 10;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	transition: all 0.1s ease;
+}
+.devModals .close:before {
+	white-space: nowrap;
+	display: block;
+	position: relative;
+	transition: all 0.1s ease;
+}
+
+/* Labeled button */
+.devModals .close.labeled:before {
+	color: #fff;
+	content: "close";
+	font-size: 8px;
+	text-transform: uppercase;
+	background: linear-gradient(to right, #fff 50%, #000 50%);
+	background-size: 200% 100%;
+	background-position: right bottom;
+	padding: 6px 12px;
+	margin-top: -10px;
+}
+.devModals .close.labeled:hover:before {
+	background-position: left bottom;
+	color: #000;
+}
+
+/* Text button */
+.devModals .close.text:before {
+	color: #fff;
+	content: "Close";
+	font-size: 9px;
+	text-transform: uppercase;
+}
+
+/* Tag button */
+.devModals .close.tag:before {
+	color: #fff;
+	content: "\00d7";
+	background: #000;
+	text-align: center;
+	font-size: 15px;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	margin-top: 20px;
+	opacity: 0.2;
+}
+.devModals .close.tag:hover:before {
+	opacity: 1;
+}
+
+/* Icon button */
+.devModals .close.icon {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	overflow: hidden;
+	margin: 34px 12px 0 0;
+	opacity: 0.3;
+}
+.devModals .close.icon:hover:before {
+	color: #000;
+}
+.devModals .close.icon:before,
+.devModals .close.icon:after {
+	content: "";
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	top: 50%;
+	left: 0;
+	margin-top: -1px;
+	background: #000;
+}
+.devModals .close.icon:before {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.devModals .close.icon:after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.devModals .close.icon:hover {
+	opacity: 1;
+}

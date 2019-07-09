@@ -1,0 +1,17 @@
+{
+  "name": "dev-animate",
+  "main": "dev-animate.js",
+  "homepage": "https://github.com/samushi/dev-animate",
+  "authors": [
+    "Sami Maxhuni <samimaxhuni510@gmail.com>"
+  ],
+  "description": "Animate the content with CSS3 and Animate.css",
+  "keywords": [
+    "css3",
+    "animate",
+    "content",
+    "devsolution"
+  ],
+  "license": "MIT",
+  "private": true
+}
